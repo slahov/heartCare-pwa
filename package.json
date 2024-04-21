@@ -1,0 +1,25 @@
+{
+    "name": "heartcare-pwa",
+    "version": "1.0.0",
+    "description": "Application for heart failure prediciton with machine learning model.",
+    "main": "index.js",
+    "scripts": {
+        "start": "http-server -c-1 -p 3000"
+    },
+    "keywords": [
+        "pwa",
+        "progressive",
+        "web",
+        "app",
+        "heart",
+        "failure",
+        "prediction",
+        "machine",
+        "learning"
+    ],
+    "author": "Slavka Hovancova",
+    "license": "ISC",
+    "devDependencies": {
+        "http-server": "^14.1.1"
+    }
+}
