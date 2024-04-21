@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#080A10"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Progressive application for predicting the risk of heart failure and heart disease.">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@600&display=swap" rel="stylesheet">
@@ -36,22 +37,114 @@
         <div class="row">
             <form action="/predict" method="POST" class="col s12">
                 <div class="row">
+                   <div class="input-field col s4">
+                       <label for="diffWalk"><b>Problémy s chôdzou</b></label>
+                       <p>
+                           <label>
+                               <input name="DiffWalk" value="1" type="radio" />
+                               <span>Áno</span>
+                           </label>
+                       </p>
+                       <p>
+                           <label>
+                               <input name="DiffWalk" value="0" type="radio" />
+                               <span>Nie</span>
+                           </label>
+                       </p>
+                   </div>
+
                     <div class="input-field col s4">
-                        <label for="first_name"><b>Diff Walk</b></label>
-                        <br>
-                        <input id="first_name" name="DiffWalk" type="text" class="validate">
+                        <label for="highBP"><b>Vysoký krvný tlak</b></label>
+                        <p>
+                            <label>
+                                <input name="HighBP" value="1" type="radio" />
+                                <span>Áno</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="HighBP" value="0" type="radio" />
+                                <span>Nie</span>
+                            </label>
+                        </p>
                     </div>
 
                     <div class="input-field col s4">
-                        <label for="first_name"><b>High Blood Pressure</b></label>
-                        <br>
-                        <input id="first_name" name="HighBP" type="text" class="validate">
+                        <label for="highChol"><b>Vysoký cholesterol</b></label>
+                        <p>
+                            <label>
+                                <input name="HighChol" value="1" type="radio" />
+                                <span>Áno</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="HighChol" value="0" type="radio" />
+                                <span>Nie</span>
+                            </label>
+                        </p>
                     </div>
 
                     <div class="input-field col s4">
-                        <label for="first_name"><b>Vysoký krvný tlak</b></label>
+                        <label for="smoker"><b>Fajčiar</b></label>
+                        <p>
+                            <label>
+                                <input name="Smoker" value="1" type="radio" />
+                                <span>Áno</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="Smoker" value="0" type="radio" />
+                                <span>Nie</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="stroke"><b>Mozgová mŕtvica</b></label>
+                        <p>
+                            <label>
+                                <input name="Stroke" value="1" type="radio" />
+                                <span>Áno</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="Stroke" value="0" type="radio" />
+                                <span>Nie</span>
+                            </label>
+                        </p>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="first_name"><b>Diabetes</b></label>
                         <br>
-                        <input id="first_name" name="HighChol" type="text" class="validate">
+                        <input id="first_name" name="Diabetes" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="first_name"><b>Všeobecné zdravie</b></label>
+                        <br>
+                        <input id="first_name" name="GenHlth" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="first_name"><b>Fyzické zdravie</b></label>
+                        <br>
+                        <input id="first_name" name="PhysHlth" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="first_name"><b>Vek</b></label>
+                        <br>
+                        <input id="first_name" name="Age" type="text" class="validate">
+                    </div>
+
+                    <div class="input-field col s4">
+                        <label for="first_name"><b>Príjem</b></label>
+                        <br>
+                        <input id="first_name" name="Income" type="text" class="validate">
                     </div>
                 </div>
                 <div class="row center">
@@ -60,6 +153,8 @@
             </form>
         </div>
         <p>{{ pred }}</p>
+        <br>
+        <p>{{ age_class }}</p>
         <br>
         <script src="/static/js/main.js"></script>
     </body>
