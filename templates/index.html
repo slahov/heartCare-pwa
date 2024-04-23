@@ -34,128 +34,146 @@
     </script>
 </head>
     <body>
-        <div class="row">
-            <form action="/predict" method="POST" class="col s12">
-                <div class="row">
-                   <div class="input-field col s4">
-                       <label for="diffWalk"><b>Problémy s chôdzou</b></label>
-                       <p>
-                           <label>
-                               <input name="DiffWalk" value="1" type="radio" />
-                               <span>Áno</span>
-                           </label>
-                       </p>
-                       <p>
-                           <label>
-                               <input name="DiffWalk" value="0" type="radio" />
-                               <span>Nie</span>
-                           </label>
-                       </p>
-                   </div>
-
-                    <div class="input-field col s4">
-                        <label for="highBP"><b>Vysoký krvný tlak</b></label>
-                        <p>
-                            <label>
-                                <input name="HighBP" value="1" type="radio" />
-                                <span>Áno</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="HighBP" value="0" type="radio" />
-                                <span>Nie</span>
-                            </label>
-                        </p>
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="highChol"><b>Vysoký cholesterol</b></label>
-                        <p>
-                            <label>
-                                <input name="HighChol" value="1" type="radio" />
-                                <span>Áno</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="HighChol" value="0" type="radio" />
-                                <span>Nie</span>
-                            </label>
-                        </p>
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="smoker"><b>Fajčiar</b></label>
-                        <p>
-                            <label>
-                                <input name="Smoker" value="1" type="radio" />
-                                <span>Áno</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="Smoker" value="0" type="radio" />
-                                <span>Nie</span>
-                            </label>
-                        </p>
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="stroke"><b>Mozgová mŕtvica</b></label>
-                        <p>
-                            <label>
-                                <input name="Stroke" value="1" type="radio" />
-                                <span>Áno</span>
-                            </label>
-                        </p>
-                        <p>
-                            <label>
-                                <input name="Stroke" value="0" type="radio" />
-                                <span>Nie</span>
-                            </label>
-                        </p>
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="first_name"><b>Diabetes</b></label>
-                        <br>
-                        <input id="first_name" name="Diabetes" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="first_name"><b>Všeobecné zdravie</b></label>
-                        <br>
-                        <input id="first_name" name="GenHlth" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="first_name"><b>Fyzické zdravie</b></label>
-                        <br>
-                        <input id="first_name" name="PhysHlth" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="first_name"><b>Vek</b></label>
-                        <br>
-                        <input id="first_name" name="Age" type="text" class="validate">
-                    </div>
-
-                    <div class="input-field col s4">
-                        <label for="first_name"><b>Príjem</b></label>
-                        <br>
-                        <input id="first_name" name="Income" type="text" class="validate">
-                    </div>
+        <div class="top-molding">
+            <img src="/static/images/logo.svg" alt="app-logo" class="logo">
+            <div class="nav">
+                <div class="home-rectangle">
+                <p>Domov</p>
                 </div>
-                <div class="row center">
-                    <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+
+                <div class="contact-rectangle">
+                <p>Kontakt</p>
                 </div>
-            </form>
+
+                <div class="installation-rectangle">
+                <p>Inštalácia</p>
+                </div>
+                <button class="hamburger-menu">
+                    <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
+                </button>
+            </div>
         </div>
-        <p>{{ pred }}</p>
-        <br>
-        <p>{{ age_class }}</p>
-        <br>
+        <div class="content">
+            <div class="welcome">
+                <h1 class="page-title">Nechajte si predpovedať riziko srdcového zlyhania a kardiovaskulárnych ochorení.</h1>
+                <p class="information">Aplikácia HeartCare ponúka jednoduchý spôsob ako zistiť riziko kardiovaskulárneho ochorenia
+                                        alebo srdcového zlyhania. HeartCare využíva pokročilý model strojového učenia na analýzu veľkého množstva
+                                        klinických údajov a následnú predikciu. Stačí vyplniť krátky dotazník a výsledok sa zobrazí o pár sekúnd.</p>
+                <button type="button" onclick="scrollToForm()" class="find-out-button">Zistiť</button>
+            </div>
+        </div>
+            <div class="row" id="row">
+                <form action="/predict" method="POST">
+                    <div class="age">
+                        <span>Môj vek:</span>
+                        <div class="text-field">
+                            <input type="text" class="textInput" id="ageInput" name="age" placeholder="Nahraď ma vekom">
+                            <label for="ageInput"></label>
+                        </div>
+                    </div>
+
+                    <div class="DiffWalk">
+                        <span>Mávam problémy s chôdzou.</span>
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox" name="DiffWalk">
+                            <label class="switch" for="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                            <div class="info-container">
+                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
+                                <p class="info-text">Predovšetkým v spojení s bolesťou na hrudníku, dýchavičnosťou, neprimeranou únavou počas chôdze.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="HighBP">
+                        <span>Mám diagnostikovaný vysoký tlak.</span>
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox" name="HighBP">
+                            <label class="switch" for="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                            <div class="info-container">
+                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
+                                <p class="info-text">Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="HighChol">
+                        <span>Mám diagnostikovaný vysoký cholesterol.</span>
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox" name="HighChol">
+                            <label class="switch" for="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                            <div class="info-container">
+                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
+                                <p class="info-text">Hladina cholesterolu nad 200 mg/dl, diagnostikovaná lekárom.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="smoker">
+                        <span>Som fajčiar.</span>
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox" name="HighBP">
+                            <label class="switch" for="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                            <div class="info-container">
+                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
+                                <p class="info-text">Pravidelné požívanie tabakových výrobkov.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stroke">
+                        <span>V minulosti som prekonal mozgovú mŕtvicu.</span>
+                        <div class="container">
+                            <input type="checkbox" class="checkbox" id="checkbox" name="stroke">
+                            <label class="switch" for="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="diabetes">
+                        <span>Mám diagnostikovaný určitý typ diabetu.</span>
+                        <div class="dropdown">
+                            <input type="text" name="Diabetes" id="diabetesInput" placeholder="Vyber vhodnú možnosť">
+                            <label for="diabetesInput"></label>
+                            <ul class="dropdown-menu">
+                                <li>Nemám diagnostikovaný diabetes.</li>
+                                <li>Mám diagnostikovaný diabetes prvého typu alebo sa diabetes objavil počas tehotenstva.</li>
+                                <li>Mám diabetes druhého stupňa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="genHlth">
+                        <span>Ako hodnotím svoje všeobecné zdravie?</span>
+                        <div class="slider-container">
+                            <input type="range" class="slider" id="genHlthRange" name="GenHlth" min="1" max="5" value="3">
+                            <label class="sldier" for="genHlthRange">
+                            <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="physHlth">
+                        <span>Počas koľkých dní som sa v priebehu posledných 30 dní cítil fyzicky zle?</span>
+                        <div class="slider-container">
+                            <input type="range" class="slider" id="physHlthRange" name="PhysHlth" min="0" max="30" value="0">
+                            <label class="sldier" for="physHlthRange">
+                            <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+
         <script src="/static/js/main.js"></script>
     </body>
 </html>
