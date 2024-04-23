@@ -67,9 +67,17 @@ body {
     display: none;
 }
 
+@media only screen and (max-width: 600px) {
+    .logo {
+        width: 120px;
+        margin: 8vw;
+    }
+}
+
 @media only screen and (max-width: 400px) {
     .logo {
         width: 90px;
+        margin: 4vw;
     }
 }
 
@@ -123,6 +131,13 @@ body {
     width: 60vw;
     align-items: center;
     text-align: center;
+    margin-top: 150px;
+}
+
+@media only screen and (max-width: 800px) {
+    .welcome {
+        width: 80vw;
+    }
 }
 
 .page-title {
@@ -152,8 +167,16 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
-    .welcome {
-        width: 80vw;
+    .find-out-button {
+        padding: 10px 50px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .find-out-button {
+        padding: 8px 40px;
+        font-size: 20px;
     }
 }
 
@@ -173,6 +196,102 @@ body {
     color: var(--info-gray);
     margin-left: 3px;
 }
+
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.notice {
+    width: 70vw;
+    margin: 150px 0 30px 0;
+    text-align: center;
+}
+
+.textInput {
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.textInput:hover,
+.textInput:focus {
+  border: 2px solid var(--lily);
+  box-shadow: 0px 0px 0px 7px rgba(82, 88, 169, 0.2);
+  background-color: white;
+}
+
+.textInput::placeholder {
+    font-family: 'KoHo', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+
+.container span {
+    margin-top: 40px;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle label {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle label::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.toggle input:checked + label::before {
+    transform: translateX(26px);
+}
+
+.toggle input:checked + label {
+    background-color: var(--lily);
+}
+
+.info-container {
+    margin-top: 10px;
+}
+
+
 
 
 
