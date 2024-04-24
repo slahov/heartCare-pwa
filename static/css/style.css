@@ -33,6 +33,7 @@ body {
     --font-color: #E5ECE9;
     --lily: #8D91C7;
     --info-gray: #5B5B5B;
+    --background-color: #1D1F28;
     --bar-width: 60px;
     --bar-height: 8px;
     --hamburger-gap: 6px;
@@ -131,7 +132,7 @@ body {
     width: 60vw;
     align-items: center;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 130px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -212,21 +213,24 @@ body {
 }
 
 .textInput {
-  border: 2px solid transparent;
-  width: 15em;
-  height: 2.5em;
-  padding-left: 0.8em;
-  outline: none;
-  overflow: hidden;
-  background-color: #F3F3F3;
-  border-radius: 10px;
-  transition: all 0.5s;
+    border: 2px solid transparent;
+    width: 16em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-top: 15px;
+    font-family: 'KoHo', sans-serif;
+    font-size: 18px;
 }
 
 .textInput:hover,
 .textInput:focus {
   border: 2px solid var(--lily);
-  box-shadow: 0px 0px 0px 7px rgba(82, 88, 169, 0.2);
+  box-shadow: 0 0 0 7px rgba(82, 88, 169, 0.2);
   background-color: white;
 }
 
@@ -291,10 +295,113 @@ body {
     margin-top: 10px;
 }
 
+.diabetes span {
+    margin-top: 140px;
+}
+
+.paste-button {
+  position: relative;
+  display: block;
+    width: 0;
+}
+
+.button {
+    background-color: var(--font-color);
+    color: #7e7e7e;
+    font-family: 'KoHo', sans-serif;
+    font-weight: bold;
+    padding: 10px 10px;
+    font-size: 17px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 280px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button img {
+    vertical-align: middle;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 15px;
+    z-index: 1;
+    min-width: 200px;
+    background-color: var(--font-color);
+    border: 2px solid var(--font-color);
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: KoHo, sans-serif;
+    width: 280px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.1s;
+    font-size: 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--lily);
+  color: var(--font-color);
+}
+
+.dropdown-content a:focus {
+  background-color: var(--lily);
+  color: var(--font-color);
+}
+
+.dropdown-content #top:hover {
+  border-radius: 0px 0px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+  border-radius: 0px 0px 13px 13px;
+}
 
 
+.paste-button:hover button {
+  border-radius: 10px 10px 0px 0px;
+}
 
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 15px;
+}
 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background: var(--lily);
+    cursor: pointer;
+    border-radius: 50%;
+}
 
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: var(--lily);
+    cursor: pointer;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+}
 
 
