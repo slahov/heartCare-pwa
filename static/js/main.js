@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('Income').addEventListener('input', function() {
         // Získanie aktuálnej hodnoty slidera
         var sliderValue = parseInt(this.value); // Prevod na číslo
-    
+
         // Mapovanie medzi hodnotami slidera a vašimi vlastnými hodnotami
         var mappedValue = '';
         switch (sliderValue) {
@@ -129,12 +129,13 @@ document.addEventListener('DOMContentLoaded', function() {
             case 7:
                 mappedValue = '50 - 75-tisíc eur'
                 break;
-            case 8: 
-                mappedValue = '75-tisíc eur a viac'    
+            case 8:
+                mappedValue = '75-tisíc eur a viac'
+                break;
             default:
-                mappedValue = '75-tisíc eur a viac';
+                mappedValue = 'Neznáma hodnota';
         }
-    
+
         // Aktualizácia obsahu elementu pre zobrazenie hodnoty
         document.getElementById('sliderValueIncome').textContent = mappedValue;
     });
