@@ -35,18 +35,26 @@
 </head>
     <body>
         <div class="top-molding">
-            <img src="/static/images/logo.svg" alt="app-logo" class="logo">
+            <a href="/">
+                <img src="/static/images/logo.svg" alt="app-logo" class="logo">
+            </a>
             <div class="nav">
-                <div class="home-rectangle">
-                <p>Domov</p>
+                <div class="rectangle">
+                    <a href="/">
+                        <img src="/static/images/home-active.svg" alt="tlacidlo-domov">
+                    </a>
                 </div>
 
-                <div class="contact-rectangle">
-                <p>Kontakt</p>
+                <div class="rectangle">
+                    <a href="contact.html">
+                        <img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt">
+                    </a>
                 </div>
 
-                <div class="installation-rectangle">
-                <p>Inštalácia</p>
+                <div class="rectangle">
+                    <a href="installation.html">
+                        <img src="/static/images/installation-inactive.svg" alt="tlacidlo-instalacia">
+                    </a>
                 </div>
                 <button class="hamburger-menu">
                     <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
@@ -67,6 +75,9 @@
                     Ak máte akékoľvek obavy o svoje zdravie, obráťte sa na svojho lekára.
                     Prosíme, postupuje podľa pokynov a pre úspešné vyhodnotenie dotazníka vyplňte všetky polia.
                     Vaše odpovede sú anonymné a nebudú použité na budúci výskum ani zdieľané s tretími stranami.</p>
+                <div class="form-parent">
+
+
                 <form action="/predict" method="POST">
                     <div class="age">
                         <span>Môj vek:</span>
@@ -75,7 +86,6 @@
                             <label for="ageInput"></label>
                         </div>
                     </div>
-
                     <div class="container">
                         <span>Mávam problémy s chôdzou.</span>
                         <div class="toggle">
@@ -142,48 +152,65 @@
                         </div>
                     </div>
 
-                    <div class="diabetes">
+                   <div class="container-diabetes">
                         <span class="text">Mám diagnostikovaný určitý typ diabetu.</span>
-                        <div class="dropdown">
-                            <div class="paste-button">
-                                <button class="button" id="dropdownButton">
-                                    <p>Vyberte &nbsp;</p>
-                                    <img src="/static/images/chevron-bottom-normal.svg" alt="obrazok" style="vertical-align: middle;">
-                                </button>
-                                <div class="dropdown-content">
-                                  <a id="top" href="#">Nemám diagnostikovaný diabetes.</a>
-                                  <a id="middle" href="#">Mám diabetes prvého stupňa alebo sa objavil len počas tehotenstva.</a>
-                                  <a id="bottom" href="#">Mám diagnostikovaný diabetes druhého stupňa.</a>
-                                </div>
-                            </div>
+                        <div class="radio-buttons">
+                            <label>
+                                <input checked="" class="input" type="radio" name="diabetes" value="0">
+                                Nemám diagnostikovaný diabetes.
+                            </label>
+                            <label>
+                                <input type="radio" class="input" name="diabetes" value="1">
+                                Mám diabetes prvého stupňa alebo sa objavil len počas tehotenstva.
+                            </label>
+                            <label>
+                                <input type="radio" class="input" name="diabetes" value="2">
+                                Mám diagnostikovaný diabetes druhého stupňa.
+                            </label>
                         </div>
                     </div>
 
-                    <div class="genHlth">
+                    <div class="container">
                         <span>Ako hodnotím svoje všeobecné zdravie?</span>
                         <div class="slider-container">
+                            <span class="slider-value" id="sliderValue">priemerné</span>
                             <input type="range" class="slider" id="genHlthRange" name="GenHlth" min="1" max="5" value="3">
                             <label class="slider-label" for="genHlthRange">
                             <span class="slider-button"></span>
                             </label>
-                            <span id="sliderValue">priemerné</span>
                         </div>
                     </div>
 
-                    <div class="physHlth">
+                    <div class="container">
                         <span>Počas koľkých dní som sa v priebehu posledných 30 dní cítil fyzicky zle?</span>
                         <div class="slider-container">
+                            <span class="slider-value" id="sliderValuePhysHlth">0</span>
                             <input type="range" class="slider" id="physHlthRange" name="PhysHlth" min="0" max="30" value="0">
                             <label class="slider" for="physHlthRange">
                             <span class="slider"></span>
                             </label>
-                            <span id="sliderValuePhysHlth">0</span>
                         </div>
                     </div>
+
+                    <div class="container">
+                        <span>Ako si na tom s peniazkami?</span>
+                        <div class="slider-container">
+                            <span class="slider-value" id="sliderValue">1</span>
+                            <input type="range" class="slider" id="Income" name="Income" min="1" max="8" value="1">
+                            <label class="slider-label" for="Income">
+                            <span class="slider-button"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row center">
+                    <button type="submit" class="btn">Predikuj riziko</button>
+                </div>
                 </form>
+                    </div>
         </div>
 
-
+        <p>{{ pred }}</p>
         <script src="/static/js/main.js"></script>
     </body>
 </html>
