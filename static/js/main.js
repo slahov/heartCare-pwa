@@ -35,11 +35,6 @@ if (window.innerWidth <= 600) {
     navBar.style.display = 'none';
 }
 
-// disabling button for diabetes dropdown menu
-document.getElementById('dropdownButton').addEventListener('click', function() {
-    this.disabled = true;
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('.dropdown-content a');
 
