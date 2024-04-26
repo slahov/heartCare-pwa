@@ -79,7 +79,7 @@
 
 
                 <form action="/predict" method="POST">
-                    <div class="age">
+                    <div class="container">
                         <span>Môj vek:</span>
                         <div class="text-field">
                             <input type="text" class="textInput" id="ageInput" name="age" placeholder="Nahraď ma vekom" autocomplete="off">
@@ -94,8 +94,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
-                                <p class="info-text">Predovšetkým v spojení s bolesťou na hrudníku, dýchavičnosťou, neprimeranou únavou počas chôdze.</p>
+                                <p class="info-text">🛈 Predovšetkým v spojení s bolesťou na hrudníku, dýchavičnosťou, neprimeranou únavou počas chôdze.</p>
                             </div>
                         </div>
                     </div>
@@ -108,8 +107,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
-                                <p class="info-text">Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
+                                <p class="info-text">🛈 Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
                             </div>
                         </div>
                     </div>
@@ -122,8 +120,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
-                                <p class="info-text">Hladina cholesterolu nad 200 mg/dl, diagnostikovaná lekárom.</p>
+                                <p class="info-text">🛈 Hladina cholesterolu nad 200 mg/dl, diagnostikovaná lekárom.</p>
                             </div>
                         </div>
                     </div>
@@ -136,8 +133,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <img src="/static/images/info-icon.svg" class="info-icon" alt="info">
-                                <p class="info-text">Pravidelné požívanie tabakových výrobkov.</p>
+                                <p class="info-text">🛈 Pravidelné požívanie tabakových výrobkov.</p>
                             </div>
                         </div>
                     </div>
@@ -152,19 +148,19 @@
                         </div>
                     </div>
 
-                   <div class="container-diabetes">
+                   <div class="container">
                         <span class="text">Mám diagnostikovaný určitý typ diabetu.</span>
                         <div class="radio-buttons">
                             <label>
-                                <input checked="" class="input" type="radio" name="diabetes" value="0">
+                                <input id="top" checked="" class="input" type="radio" name="diabetes" value="0">
                                 Nemám diagnostikovaný diabetes.
                             </label>
                             <label>
-                                <input type="radio" class="input" name="diabetes" value="1">
+                                <input id="middle" type="radio" class="input" name="diabetes" value="1">
                                 Mám diabetes prvého stupňa alebo sa objavil len počas tehotenstva.
                             </label>
                             <label>
-                                <input type="radio" class="input" name="diabetes" value="2">
+                                <input id="bottom" type="radio" class="input" name="diabetes" value="2">
                                 Mám diagnostikovaný diabetes druhého stupňa.
                             </label>
                         </div>
@@ -203,14 +199,15 @@
                         </div>
                     </div>
 
-                    <div class="row center">
-                    <button type="submit" class="btn">Predikuj riziko</button>
-                </div>
+                    <div class="submit-button">
+                        <button type="submit" class="btn">Predikuj riziko</button>
+                    </div>
+
+
                 </form>
                     </div>
         </div>
-
-        <p>{{ pred }}</p>
+        <div style="height: 60px; color: transparent;"></div>
         <script src="/static/js/main.js"></script>
     </body>
 </html>
