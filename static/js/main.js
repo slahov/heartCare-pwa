@@ -100,3 +100,41 @@ document.addEventListener('DOMContentLoaded', function() {
             output.textContent = this.value;
         };
     });
+
+    document.getElementById('Income').addEventListener('input', function() {
+        // Získanie aktuálnej hodnoty slidera
+        var sliderValue = parseInt(this.value); // Prevod na číslo
+    
+        // Mapovanie medzi hodnotami slidera a vašimi vlastnými hodnotami
+        var mappedValue = '';
+        switch (sliderValue) {
+            case 1:
+                mappedValue = '< 10-tisíc eur';
+                break;
+            case 2:
+                mappedValue = '10 - 15-tisíc eur';
+                break;
+            case 3:
+                mappedValue = '15 - 20-tisíc eur';
+                break;
+            case 4:
+                mappedValue = '20 - 25-tisíc eur';
+                break;
+            case 5:
+                mappedValue = '25 - 35-tisíc eur';
+                break;
+            case 6:
+                mappedValue = '35 - 50-tisíc eur'
+                break;
+            case 7:
+                mappedValue = '50 - 75-tisíc eur'
+                break;
+            case 8: 
+                mappedValue = '75-tisíc eur a viac'    
+            default:
+                mappedValue = '75-tisíc eur a viac';
+        }
+    
+        // Aktualizácia obsahu elementu pre zobrazenie hodnoty
+        document.getElementById('sliderValueIncome').textContent = mappedValue;
+    });
