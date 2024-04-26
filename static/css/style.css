@@ -63,12 +63,38 @@ body {
         width: 120px;
         margin: 8vw;
     }
+    .page-title {
+        font-size: 30px;
+    }
+    .information {
+        font-size: 20px;
+    }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .logo {
         width: 90px;
         margin: 4vw;
+    }
+    .page-title {
+        font-size: 28px;
+    }
+    .information {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-height: 700px)
+{
+    .logo {
+        width: 90px;
+        margin: 4vw;
+    }
+    .page-title {
+        font-size: 23px;
+    }
+    .information {
+        font-size: 15px;
     }
 }
 
@@ -182,11 +208,12 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    .container-diabetes {
+    .container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
+    margin-top: 40px;
+    text-align: center; /* Zarovnanie textu na stred */
     }
     .container span {
         font-size: 18px;
@@ -203,22 +230,29 @@ body {
     margin-left: 3px;
 }
 
-@media only screen and (max-width: 1200px) {
-    .row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 200px;
-    }
+.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
 }
+/*@media only screen and (max-width: 1200px) {*/
+/*    .row {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*        justify-content: center;*/
+/*        margin-top: 200px;*/
+/*    }*/
+/*}*/
 
-@media only screen and (max-width: 600px) {
-    
-    .row {
-        margin-top: 100px;
-    }
-}
+/*@media only screen and (max-width: 600px) {*/
+/*    */
+/*    .row {*/
+/*        margin-top: 100px;*/
+/*    }*/
+/*}*/
 
 
 .notice {
@@ -330,7 +364,7 @@ body {
     margin-left: 10px;
 }
 
-.input {
+.radio-buttons input {
   -webkit-appearance: none;
  /* remove default */
   display: flex;
@@ -496,17 +530,71 @@ input[type="range"]:disabled::-webkit-slider-thumb {
     font-family: KoHo, sans-serif;
     color: var(--font-color);
     font-size: 1.8vw;
-    margin-top: -80px;
 }
 
 .btn:hover {
     background-color: #5258A9;
 }
 
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 80%;
+    }
+    .radio-buttons input#middle[type="radio"] {
+        width: 36px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .btn {
         padding: 20px 50px;
         font-size: 20px;
+        margin-top: 80px;
+    }
+    .toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zarovnanie na stred vodorovne */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center; /* Zarovnanie textu na stred */
+    }
+    .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    text-align: center;
+        width: 80%;
+        margin-left: -10px;
+    }
+
+    .info-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 300px;
+}
+    .info-text {
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .radio-buttons input {
+        height: 15px;
+        width: 15px;
+    }
+    .radio-buttons input#middle[type="radio"] {
+        height: 15px;
+        width: 22px;
+    }
+    .radio-buttons label {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .notice {
+        font-size: 18px;
     }
 }
 
