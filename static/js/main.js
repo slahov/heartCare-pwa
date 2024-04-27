@@ -139,3 +139,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aktualizácia obsahu elementu pre zobrazenie hodnoty
         document.getElementById('sliderValueIncome').textContent = mappedValue;
     });
+
+    // Form cannot be submitted if all text fields arent filled
+    function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+        alert("Prosím, vyplňte všechny údaje.");
+        return false;
+    }
+    return true;
+}
