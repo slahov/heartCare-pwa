@@ -39,19 +39,19 @@
                 <img src="/static/images/logo.svg" alt="app-logo" class="logo">
             </a>
              <div class="nav">
-                <div>
+                <div class="rectangle">
                 <a href="/">
                     <img src="/static/images/home-inactive.svg" alt="tlacidlo-domov">
                 </a>
                 </div>
 
-                <div>
+                <div class="rectangle">
                    <a href="contact.html">
                        <img src="/static/images/contact-active.svg" alt="tlacidlo-kontakt">
                    </a>
                 </div>
 
-                <div>
+                <div class="rectangle">
                    <a href="installation.html">
                        <img src="/static/images/installation-inactive.svg" alt="tlacidlo-instalacia">
                    </a>
@@ -60,7 +60,30 @@
                     <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
                 </button>
             </div>
-        </div>
-    <h1>SOM SLAVKA A SOM HOT</h1>
+         </div>
+         <div class="contact-page-title">
+             <h1>Máte otázky?</h1>
+         </div>
+         <div class="subpage-content">
+             <div class="contact-container">
+                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" onsubmit="return validateForm()">
+                     <div class="contact-form-title">
+                         <h2>Kontaktujte ma</h2>
+                         <hr>
+                     </div>
+                     <input type="hidden" name="access_key" value="49d158f8-3fb2-4c08-b637-d55846b63930" autocomplete="off">
+                     <input type="text" name="name" id="name" placeholder="Vaše meno" class="contact-input" autocomplete="off">
+                     <input type="email" name="email" id="email" placeholder="Váš email" class="contact-input" autocomplete="off">
+                     <textarea name="message" id="message" placeholder="Vaša správa" class="contact-input"></textarea>
+                     <a href="https://shorturl.at/kCW78" class="form-link" target="_blank">Zanechať spätnú väzbu</a>
+                     <button type="submit">Odoslať</button>
+                     <p class="form-info">🛈 Email zadajte správne, v opačnom prípade vás nebudem mocť kontaktovať.</p>
+                 </form>
+                 <div class="form-art">
+                    <img src="/static/images/art.svg" alt="">
+                 </div>
+             </div>
+         </div>
+    <script src="/static/js/main.js"></script>
     </body>
 </html>
