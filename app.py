@@ -59,7 +59,7 @@ def predict():
     diabetes = float(form['diabetes'])
     genHealth = float(form['GenHlth'])
     physHealth = float(form['PhysHlth'])
-    age = float(form['age'])
+    age = form['age']
     income = float(form['Income'])
 
     age_ordinal = convert_age(age)
