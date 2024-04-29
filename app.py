@@ -59,12 +59,11 @@ def predict():
     diabetes = float(form['diabetes'])
     genHealth = float(form['GenHlth'])
     physHealth = float(form['PhysHlth'])
-    age = form['age']
-    income = float(form['Income'])
+    age = float(form['age'])
 
     age_ordinal = convert_age(age)
     features = np.array([
-        [diffWalk, highBP, highChol, smoker, stroke, diabetes, genHealth, physHealth, age_ordinal, income]
+        [diffWalk, highBP, highChol, smoker, stroke, diabetes, genHealth, physHealth, age_ordinal]
     ])
 
     final = scaler.transform(features)
@@ -72,8 +71,8 @@ def predict():
     output = '{0:.{1}f}'.format(prediction[0][1], 2)
     # return render_template('index.html', pred='Your risk of heart failure is {}'.format(output))
     output = int(round(prediction[0][1] * 100))
-    return render_template('predict.html', pred='Your risk of heart failure is {}%'.format(output), age_class=age_ordinal)
+    return render_template('predict.html', pred='Vaše riziko srdcového zlyhania je {}%'.format(output))
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run("0.0.0.0")
