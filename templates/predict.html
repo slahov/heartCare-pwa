@@ -39,24 +39,37 @@
                 <img src="/static/images/logo.svg" alt="app-logo" class="logo">
             </a>
             <div class="nav">
-                <div><a href="contact.html">
+                <div class="rectangle">
+                    <a href="contact.html">
                     <img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt">
                 </a>
                 </div>
-
-                <div><a href="installation.html">
-                    <img src="/static/images/installation-inactive.svg" alt="tlacidlo-instalacia">
-                </a>
-                </div>
-                <button class="hamburger-menu">
+                <button class="hamburger-menu" id="hamburger-menu-button">
                     <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
                 </button>
             </div>
+         </div>
+          <div id="overlay-menu" class="overlay-menu">
+            <img src="/static/images/logo.svg" alt="app-logo" class="logo-overlay">
+            <button id="close-overlay-menu" class="close-button">&times;</button>
+            <a href="/"><img src="/static/images/home-active.svg" alt="tlacidlo-domov"></a>
+            <a href="contact.html"><img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt"></a>
+            <a href="https://shorturl.at/kCW78" class="form-link" target="_blank"><img src="/static/images/feedback-inactive.svg" alt="Zanechajte spätnú väzbu"></a>
+        </div>
+         <div class="pred-container">
+             <p class="prediction">{{ pred }}</p>
+         </div>
+         <div class="prediction-information">
+             <p>Táto predikcia slúži výhradne na informatívne účely a nenahrádza diagnostiku od lekára.
+                 Aktuálna verzia modelu, ktorý poskytuje predikciu, dosahuje presnosť približne 76%.
+                 Ak máte akékoľvek obavy o svoje zdravie, obráťte sa na svojho lekára.</p>
+         </div>
+        <div class="home-button">
+            <a href="/">Domov</a>
 
         </div>
-    <p>{{ pred }}</p>
-    <div>
-                <a href="/">Domov</a>
-            </div>
+
+            <a href="https://shorturl.at/kCW78" class="form-link" target="_blank" style="display: flex; justify-content: center; font-size: 15px">Spätná väzba</a>
+    <script src="/static/js/main.js"></script>
     </body>
 </html>

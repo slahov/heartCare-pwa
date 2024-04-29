@@ -19,7 +19,7 @@
         <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_192x192.png')}}" type="image/png">
         <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_512x512.png')}}" type="image/png">
         <link rel="manifest" href="/manifest.json">
-        <title>My Web Page</title>
+        <title>HeartCare</title>
         <link rel="stylesheet" href="/static/css/style.css">
     <script>
         if ('serviceWorker' in navigator) {
@@ -50,16 +50,17 @@
                         <img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt">
                     </a>
                 </div>
-
-                <div class="rectangle">
-                    <a href="installation.html">
-                        <img src="/static/images/installation-inactive.svg" alt="tlacidlo-instalacia">
-                    </a>
-                </div>
-                <button class="hamburger-menu">
+                <button class="hamburger-menu" id="hamburger-menu-button">
                     <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
                 </button>
             </div>
+        </div>
+        <div id="overlay-menu" class="overlay-menu">
+            <img src="/static/images/logo.svg" alt="app-logo" class="logo-overlay">
+            <button id="close-overlay-menu" class="close-button">&times;</button>
+            <a href="/"><img src="/static/images/home-active.svg" alt="tlacidlo-domov"></a>
+            <a href="contact.html"><img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt"></a>
+            <a href="https://shorturl.at/kCW78" class="form-link" target="_blank"><img src="/static/images/feedback-inactive.svg" alt="Zanechajte spätnú väzbu"></a>
         </div>
         <div class="content">
             <div class="welcome">
@@ -71,7 +72,8 @@
             </div>
         </div>
             <div class="row" id="row">
-                <p class="notice">Tento dotazník slúži len na informatívne účely a v žiadnom prípade nenahrádza diagnostiku lekárom.
+                <div class="empty-div" id="empty-div" style="margin-top: 20px"></div>
+                <p class="notice" id="notice">Tento dotazník slúži len na informatívne účely a v žiadnom prípade nenahrádza diagnostiku lekárom.
                     Ak máte akékoľvek obavy o svoje zdravie, obráťte sa na svojho lekára.
                     Prosíme, postupuje podľa pokynov a pre úspešné vyhodnotenie dotazníka vyplňte všetky polia.
                     Vaše odpovede sú anonymné a nebudú použité na budúci výskum ani zdieľané s tretími stranami.</p>
@@ -82,7 +84,7 @@
                     <div class="container">
                         <span>Môj vek:</span>
                         <div class="text-field">
-                            <input type="text" class="textInput" id="ageInput" name="age" placeholder="Nahraď ma vekom" autocomplete="off">
+                            <input type="text" class="textInput" id="ageInput" name="age" placeholder="Zadajte váš vek" autocomplete="off" required pattern="[0-9]+" min="1">
                             <label for="ageInput"></label>
                         </div>
                     </div>
@@ -94,7 +96,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <p class="info-text">🛈 Predovšetkým v spojení s bolesťou na hrudníku, dýchavičnosťou, neprimeranou únavou počas chôdze.</p>
+                                <p class="info-text">&#9432; Predovšetkým v spojení s bolesťou na hrudníku, dýchavičnosťou, neprimeranou únavou počas chôdze.</p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +109,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <p class="info-text">🛈 Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
+                                <p class="info-text">&#9432; Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +122,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <p class="info-text">🛈 Hladina cholesterolu nad 200 mg/dl, diagnostikovaná lekárom.</p>
+                                <p class="info-text">&#9432; Hladina cholesterolu nad 200 mg/dl, diagnostikovaná lekárom.</p>
                             </div>
                         </div>
                     </div>
@@ -133,7 +135,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <p class="info-text">🛈 Pravidelné požívanie tabakových výrobkov.</p>
+                                <p class="info-text">&#9432; Pravidelné požívanie tabakových výrobkov.</p>
                             </div>
                         </div>
                     </div>
@@ -174,6 +176,9 @@
                             <label class="slider-label" for="genHlthRange">
                             <span class="slider-button"></span>
                             </label>
+                            <div class="info-container">
+                                <p class="info-text">&#9432; Zahŕňa celkový stav tela a mysle, teda fyzické, duševné a emocionálne aspekty zdravia.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -187,18 +192,6 @@
                             </label>
                         </div>
                     </div>
-
-                    <div class="container">
-                        <span>Ako si na tom s peniazkami?</span>
-                        <div class="slider-container">
-                            <span class="slider-value" id="sliderValueIncome">1</span>
-                            <input type="range" class="slider" id="Income" name="Income" min="1" max="8" value="1">
-                            <label class="slider-label" for="Income">
-                            <span class="slider-button"></span>
-                            </label>
-                        </div>
-                    </div>
-
                     <div class="submit-button">
                         <button type="submit" class="btn">Predikuj riziko</button>
                     </div>
