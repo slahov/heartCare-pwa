@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+model = pickle.load(open('pickle/model.pkl', 'rb'))
+scaler = pickle.load(open('pickle/scaler.pkl', 'rb'))
 
 
 @app.route('/')
@@ -28,12 +28,6 @@ def serve_sw():
 @app.route('/contact.html')
 def contact():
     return render_template("contact.html")
-
-
-# registration of subpage installation
-@app.route('/installation.html')
-def installation():
-    return render_template("installation.html")
 
 
 def convert_age(age):

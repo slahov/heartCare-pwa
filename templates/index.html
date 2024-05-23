@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VHWJDNV5Z9"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-VHWJDNV5Z9');
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="theme-color" content="#080A10"/>
@@ -84,7 +93,7 @@
                     <div class="container">
                         <span>Môj vek:</span>
                         <div class="text-field">
-                            <input type="text" class="textInput" id="ageInput" name="age" placeholder="Zadajte váš vek" autocomplete="off" required pattern="[0-9]+" min="1">
+                            <input type="number" class="textInput" id="ageInput" name="age" placeholder="Zadajte váš vek" autocomplete="off" required pattern="[0-9]+" min="1" max="120">
                             <label for="ageInput"></label>
                         </div>
                     </div>
@@ -109,7 +118,7 @@
                             <span class="slider"></span>
                             </label>
                             <div class="info-container">
-                                <p class="info-text">&#9432; Krvný tlak nad 140/90 mmHG, diagnostikovnaý lekárom.</p>
+                                <p class="info-text">&#9432; Krvný tlak nad 140/90 mmHG, diagnostikovaný lekárom.</p>
                             </div>
                         </div>
                     </div>
@@ -190,10 +199,13 @@
                             <label class="slider" for="physHlthRange">
                             <span class="slider"></span>
                             </label>
+                            <div class="info-container">
+                                <p class="info-text">&#9432; Môže ísť o mierne ťažkosti, ako je bolesť hlavy, neprimeraná únava, bolesť svalov, kašeľ, nádcha, tráviace ťažkosti alebo vážnejšie ochorenia.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="submit-button">
-                        <button type="submit" class="btn">Predikuj riziko</button>
+                        <button type="submit" class="btn">Vyhodnotiť</button>
                     </div>
 
 

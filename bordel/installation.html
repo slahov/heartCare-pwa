@@ -20,7 +20,7 @@
         <link rel="apple-touch-icon" href="{{url_for('static', filename='icons/icon_512x512.png')}}" type="image/png">
         <link rel="manifest" href="/manifest.json">
         <title>My Web Page</title>
-        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     <script>
         if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
@@ -35,29 +35,29 @@
     </head>
     <body>
          <div class="top-molding">
-             <a href="/">
-                <img src="/static/images/logo.svg" alt="app-logo" class="logo">
+             <a href="/static">
+                <img src="/images/logo.svg" alt="app-logo" class="logo">
              </a>
              <div class="nav">
                  <div>
-                    <a href="/">
-                        <img src="/static/images/home-inactive.svg" alt="tlacidlo-domov">
+                    <a href="/static">
+                        <img src="/images/home-inactive.svg" alt="tlacidlo-domov">
                     </a>
                 </div>
 
                 <div>
-                    <a href="contact.html">
-                        <img src="/static/images/contact-inactive.svg" alt="tlacidlo-kontakt">
+                    <a href="../templates/contact.html">
+                        <img src="/images/contact-inactive.svg" alt="tlacidlo-kontakt">
                     </a>
                 </div>
 
                 <div>
                     <a href="installation.html">
-                        <img src="/static/images/installation-active.svg" alt="tlacidlo-instalacia">
+                        <img src="/images/installation-active.svg" alt="tlacidlo-instalacia">
                     </a>
                 </div>
                 <button class="hamburger-menu">
-                    <img src="/static/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
+                    <img src="/images/hamburger-menu-icon.svg" alt="hamburger-menu-button">
                 </button>
             </div>
         </div>
