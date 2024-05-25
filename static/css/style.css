@@ -11,6 +11,7 @@ body {
     font-size: 23px;
 }
 
+
 @media only screen and (max-width: 1200px) {
     body {
         background-color: #1D1F28;
@@ -38,9 +39,18 @@ body {
     --bar-height: 8px;
 }
 
-.top-molding {
+.top-molding { 
     display: flex;
     justify-content: space-between;
+    width: 97%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    margin: 0 2vw 0 2vw;
+    align-items: center;
+    background-color: var(--background-color);
+    padding-top: 5px;
+    z-index: 1000;
 }
 
 .logo {
@@ -93,7 +103,7 @@ body {
 @media only screen and (max-width: 500px) {
     .logo {
         width: 140px;
-        margin: 5vw;
+        margin: 0 5vw;
     }
     .page-title {
         font-size: 28px;
@@ -112,8 +122,8 @@ body {
 @media only screen and (max-height: 700px)
 {
     .logo {
-        width: 140px;
-        margin: 6.5vw;
+        width: 120px;
+        margin: 0 6.5vw;
     }
     .page-title {
         font-size: 25px;
@@ -123,6 +133,9 @@ body {
     }
     .rectangle {
         width: 30px;
+    }
+    .pred-container {
+        margin-top: 30vh;
     }
 }
 
@@ -146,7 +159,7 @@ body {
     width: 75vw;
     align-items: center;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 12vh;
 }
 
 @media only screen and (max-width: 800px) {
@@ -694,10 +707,9 @@ input[type="range"]:disabled::-webkit-slider-thumb {
     }
 }
 
-/*.contact-page-content {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
+.contact-page-content {
+    margin-top: 20vh;
+}
 
 .contact-page-title {
     text-align: center;
@@ -899,7 +911,7 @@ input[type="range"]:disabled::-webkit-slider-thumb {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 30vh;
     width: 100%;
 }
 
@@ -940,15 +952,10 @@ input[type="range"]:disabled::-webkit-slider-thumb {
     margin: 3vw;
     color: var(--font-color);
 }
-.
-
-@media only screen and (max-width: 1200px) {
-
-}
 
 @media only screen and (max-width: 800px) {
     .pred-container {
-        margin-top: 3vh;
+        margin-top: 25vh;
     }
     .prediction {
         font-size: 40px;
@@ -964,7 +971,7 @@ input[type="range"]:disabled::-webkit-slider-thumb {
 
 @media only screen and (max-width: 400px) {
     .pred-container {
-        margin-top: 2vh;
+        margin-top: 30vh;
     }
     .prediction {
         font-size: 30px;
