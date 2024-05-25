@@ -116,7 +116,7 @@ body {
         margin: 6.5vw;
     }
     .page-title {
-        font-size: 23px;
+        font-size: 25px;
     }
     .information {
         font-size: 15px;
@@ -153,13 +153,13 @@ body {
     .welcome {
         width: 80vw;
         margin-top: 5vh;
+        text-align: left;
     }
 }
 
 .page-title {
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 100%;
 }
 
 .information {
@@ -274,9 +274,9 @@ body {
 
 
 .notice {
-    width: 70vw;
+    width: 75vw;
     margin: 350px 0 30px 0;
-    text-align: center;
+    text-align: left;
 }
 
 .textInput {
@@ -651,10 +651,10 @@ input[type="range"]:disabled::-webkit-slider-thumb {
         margin-left: 75px;
         width: 70%;
     }
-
     .notice {
         margin: 90px 0 30px 0;
         font-size: 18px;
+        text-align: left;
     }
 }
 
